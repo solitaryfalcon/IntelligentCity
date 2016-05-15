@@ -1,0 +1,83 @@
+
+<html lang="en" ng-app="accountApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head
+         content must come *after* these tags -->
+    <title>Account Book</title>
+        <!-- Bootstrap -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="styles/bootstrap-social.css" rel="stylesheet">
+    <link href="styles/mystyles.css" rel="stylesheet">
+	<script src="scripts/jquery.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div class="container">
+		<h1>Account Book</h1>
+			<div class="row row-content" ng-controller="accountController as accountCtrl">
+			<div class="col-xs-12">
+			<form class="form-inline text-right" method = 'post' action='http://localhost:8888'>
+				<div class="form-group">
+					<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+					<div class="input-group">
+						<div class="input-group-addon">RMB</div>
+							<input type="text" class="form-control" id="exampleInputAmount" name="money" placeholder="Today's profile" ng-model="money">
+							<div class="input-group-addon">.00</div>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Store profile</button>
+			</form><br/>
+		</div>
+			<table class="table table-striped">
+				<tr>
+					<th>Date</th>
+					<th>Profile</th>
+				</tr>
+				<!-- <tr ng-repeat="account in accountCtrl.accounts"> -->
+				<tr ng-repeat="account in accounts_each">
+					<td>{{account.date}}</td>
+					<td>{{account.num}}</td>
+				</tr>
+				<tr class="info">
+					<td>{{today}}&nbsp <span class="label label-info">today</span></td>
+					<td>{{money}}</td>
+				</tr>
+			</table>
+			<nav class="text-center">
+				<ul class="pagination">
+				<li>
+					<a ng-click="Previous()">
+					<span>previous</span>
+					</a>
+				</li>
+				<li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" >
+					<a ng-click="selectPage(page)" >{{page}}</a>
+				</li>
+				<li>
+					<a ng-click="Next()">
+					<span>next</span>
+					</a>
+				</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<footer class="text-center">copyright &copy Bower Young &nbsp&nbsp&nbsp <a>bowenyang@yeah.net</a></footer>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="account.js"></script>
+</body>
+</html>
+
