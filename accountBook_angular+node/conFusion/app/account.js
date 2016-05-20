@@ -47,7 +47,11 @@ var app = angular.module('accountApp',[]);
 				$scope.setaccounts();
 				$scope.isActivePage(page);
 				console.log("选择的页：" + page);
-				
+				//判断是否为空，处理最后一页数据不满五条情况
+				if (response.records[page*5-1] == null) response.records[page*5-1]={"date":"","num":"","type":"null"};
+				if (response.records[page*5-2] == null) response.records[page*5-2]={"date":"","num":"","type":"null"};
+				if (response.records[page*5-3] == null) response.records[page*5-3]={"date":"","num":"","type":"null"};
+				if (response.records[page*5-4] == null) response.records[page*5-4]={"date":"","num":"","type":"null"};
 				////把条数据放入每页，每页最多五条
 				$scope.accounts_each =[response.records[page*5-5],response.records[page*5-4],response.records[page*5-3],
 				response.records[page*5-2],response.records[page*5-1]];

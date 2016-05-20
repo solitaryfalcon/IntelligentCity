@@ -25,16 +25,17 @@ http.createServer( function (request, response) {
          // 响应文件内容
          response.write(data.toString());		
       }
+	  //response.redirect ("accountBook.html");
       //  发送响应数据
 	response.end();
 	 
    });
 	//将客户端发送数据写入json文件
-	fs.appendFile('account1.json',"hello world!",function (err) {
+	/* fs.appendFile('account1.json',"hello world!",function (err) {
 		if (err) throw err;
 		console.log('It\'s saved!');
 		
-		/*  request.on('data',function(data){
+		 request.on('data',function(data){
 			console.log("received data:" + decodeURIComponent(data));
 			return data;
 		});
@@ -42,8 +43,8 @@ http.createServer( function (request, response) {
 		request.on('end',function(){
 			console.log("received from client");
 		});
-		response.end(); */
-   });
+		response.end();
+   }); */
   
   
 }).listen(8888);

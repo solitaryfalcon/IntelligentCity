@@ -2,48 +2,63 @@
 {"records":	
 		[   
 			{
-			"date":"2016-05-04",
-			"num":"48",
-			"type":"increase"
-			},
-			{
-			"date":"2016-05-05",
-			"num":"43",
-			"type":"increase"
-			},
-			{
-			"date":"2016-05-06",
-			"num":"69",
-			"type":"increase"
-			},
-			{
-			"date":"2016-05-07",
-			"num":"35",
-			"type":"increase"
-			},
-			{
-			"date":"2016-05-08",
-			"num":"-10",
-			"type":"decrease"
-			},
-			{
 			"date":"2016-05-09",
-			"num":"-8",
-			"type":"decrease"
+			"num":"+67",
+			"type":"increase"
 			},
 			{
 			"date":"2016-05-10",
-			"num":"71",
+			"num":"+37",
 			"type":"increase"
 			},
 			{
 			"date":"2016-05-11",
-			"num":"75",
+			"num":"+47.5",
 			"type":"increase"
 			},
 			{
 			"date":"2016-05-12",
-			"num":"72",
+			"num":"-86",
+			"type":"decrease"
+			},
+			{
+			"date":"2016-05-13",
+			"num":"+49",
+			"type":"increase"
+			},
+			{
+			"date":"2016-05-14",
+			"num":"-130",
+			"type":"decrease"
+			},
+			{
+			"date":"2016-05-15",
+			"num":"+66",
+			"type":"increase"
+			},
+			{
+			"date":"2016-05-16",
+			"num":"+13",
+			"type":"increase"
+			},
+			{
+			"date":"2016-05-17",
+			"num":"+43",
+			"type":"increase"
+			},
+			{
+			"date":"2016-05-18",
+			"num":"-74.5",
+			"type":"decrease"
+			},
+			{
+			"date":"2016-05-19",
+			"num":"-1.5",
+			"type":"decrease"
+			},
+			{
+			"date":"2016-05-20",
+			"num":"+18",
 			"type":"increase"
 			}
 		]
