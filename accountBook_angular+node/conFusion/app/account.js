@@ -10,6 +10,13 @@ var app = angular.module('accountApp',[]);
 			$http.get("account.json").success(function(response) {
 				$scope.accounts = response.records;
 				//alert(JSON.stringify(response.records[1]));
+				
+				//计算总值
+				$scope.totalValue=0;
+				for(var i=0; i<response.records.length; i++){
+					$scope.totalValue += parseFloat(response.records[i].num);
+				}
+				//alert(totalValue);
 				//设置首页显示数据
 				$scope.accounts_each =[response.records[0],response.records[1],response.records[2],
 									   response.records[3],response.records[4]];

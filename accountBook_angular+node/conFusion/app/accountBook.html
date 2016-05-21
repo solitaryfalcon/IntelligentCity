@@ -47,11 +47,11 @@
 		</div>
 			<table class="table table-striped">
 				<tr>
-					<th>Date</th>
+					<th>Date </th>
 					<th>Profile</th>
 				</tr>
 				<!-- <tr ng-repeat="account in accountCtrl.accounts"> -->
-				<tr ng-repeat="account in accounts_each">
+				<tr ng-repeat="account in accounts_each | orderBy:inputValue">
 					<td>{{account.date}}</td>
 					<td>{{account.num}}</td>
 				</tr>
@@ -59,6 +59,11 @@
 					<td>{{today}}&nbsp <span class="label label-info">today</span></td>
 					<td>{{money}}</td>
 				</tr>
+				<tr>
+					<td></td>
+					<td>Total:{{totalValue | currency:" ¥"}}</td>
+				</tr>
+				
 			</table>
 			<nav class="text-center">
 				<ul class="pagination">
