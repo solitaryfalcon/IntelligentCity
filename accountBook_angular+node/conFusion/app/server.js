@@ -1,9 +1,14 @@
 var http = require('http');
 var fs = require('fs');
-var url = require('url');             
-
+var url = require('url');     
+var writeData;        
+var storeData;
+var date = new Date();
+var today = date.toLocaleDateString();
 // 创建服务器
-http.createServer( function (request, response) {  
+var server = http.createServer();
+server.on("request", function (request, response) { 
+	if(request!=="/favicon.ico")
    // 解析请求，包括文件名
    var pathname = url.parse(request.url).pathname;
    
@@ -25,29 +30,39 @@ http.createServer( function (request, response) {
          // 响应文件内容
          response.write(data.toString());		
       }
-	  //response.redirect ("accountBook.html");
-      //  发送响应数据
-	response.end();
 	 
-   });
-	//将客户端发送数据写入json文件
-	/* fs.appendFile('account1.json',"hello world!",function (err) {
-		if (err) throw err;
-		console.log('It\'s saved!');
-		
-		 request.on('data',function(data){
-			console.log("received data:" + decodeURIComponent(data));
+	  response.end();
+	 
+	 //将客户端发送数据写入json文件
+	 request.on('data',function(data){
+			var reduce = "num=";
+			data += "";
+			var s = data.split("=");
+			data = s[1];
+			console.log(data);
+			storeData = data;
+			console.log(storeData);
+			
+			
+			 fs.readFile('account1.json',function(err,data1){
+				if(err) throw err;
+				var json = JSON.parse(data1);
+				console.log(storeData);
+				json.push({"date":today,"num":storeData});
+				console.log(today);
+				writeData = JSON.stringify(json);
+				fs.writeFile('account1.json',writeData);
+			}); 
 			return data;
 		});
+   });
+ 
 	
-		request.on('end',function(){
-			console.log("received from client");
-		});
-		response.end();
-   }); */
-  
-  
 }).listen(8888);
 
 // 控制台会输出以下信息
 console.log('Server running at http://127.0.0.1:8888/');
+	  
+	  
+	  
+	  

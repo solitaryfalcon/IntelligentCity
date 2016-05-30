@@ -7,19 +7,19 @@ var app = angular.module('accountApp',[]);
 			// }
 			 
 			//从json取数据并传给html accounts[];
-			$http.get("account.json").success(function(response) {
-				$scope.accounts = response.records;
-				//alert(JSON.stringify(response.records[1]));
+			$http.get("account1.json").success(function(response) {
+				$scope.accounts = response;
+				//alert(JSON.stringify(response[1]));
 				
 				//计算总值
 				$scope.totalValue=0;
-				for(var i=0; i<response.records.length; i++){
-					$scope.totalValue += parseFloat(response.records[i].num);
+				for(var i=0; i<response.length; i++){
+					$scope.totalValue += parseFloat(response[i].num);
 				}
 				//alert(totalValue);
 				//设置首页显示数据
-				$scope.accounts_each =[response.records[0],response.records[1],response.records[2],
-									   response.records[3],response.records[4]];
+				$scope.accounts_each =[response[0],response[1],response[2],
+									   response[3],response[4]];
 				//分页跳转
 				
 				//分页总数
@@ -55,15 +55,15 @@ var app = angular.module('accountApp',[]);
 				$scope.isActivePage(page);
 				console.log("选择的页：" + page);
 				//判断是否为空，处理最后一页数据不满五条情况
-				if (response.records[page*5-1] == null) response.records[page*5-1]={"date":"","num":"","type":"null"};
-				if (response.records[page*5-2] == null) response.records[page*5-2]={"date":"","num":"","type":"null"};
-				if (response.records[page*5-3] == null) response.records[page*5-3]={"date":"","num":"","type":"null"};
-				if (response.records[page*5-4] == null) response.records[page*5-4]={"date":"","num":"","type":"null"};
+				if (response[page*5-1] == null) response[page*5-1]={"date":"","num":"","type":"null"};
+				if (response[page*5-2] == null) response[page*5-2]={"date":"","num":"","type":"null"};
+				if (response[page*5-3] == null) response[page*5-3]={"date":"","num":"","type":"null"};
+				if (response[page*5-4] == null) response[page*5-4]={"date":"","num":"","type":"null"};
 				////把条数据放入每页，每页最多五条
-				$scope.accounts_each =[response.records[page*5-5],response.records[page*5-4],response.records[page*5-3],
-				response.records[page*5-2],response.records[page*5-1]];
+				$scope.accounts_each =[response[page*5-5],response[page*5-4],response[page*5-3],
+				response[page*5-2],response[page*5-1]];
 				
-				//$scope.accounts =[response.records[page-1]];
+				//$scope.accounts =[response[page-1]];
 				};
 				//设置当前选中页样式
 				$scope.isActivePage = function (page) {

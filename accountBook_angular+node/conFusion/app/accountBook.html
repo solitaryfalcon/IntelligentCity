@@ -33,12 +33,12 @@
 		<h1>Account Book</h1>
 			<div class="row row-content" ng-controller="accountController as accountCtrl">
 			<div class="col-xs-12">
-			<form class="form-inline text-right" method = 'post' action='http://localhost:8888'>
+			<form class="form-inline text-right" method = 'post' action='http://localhost:8888/accountBook.html'>
 				<div class="form-group">
 					<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
 					<div class="input-group">
 						<div class="input-group-addon">RMB</div>
-							<input type="text" class="form-control" id="exampleInputAmount" name="money" placeholder="Today's profile" ng-model="money">
+							<input type="text" class="form-control" id="exampleInputAmount" name="num" placeholder="Today's profile" ng-model="money">
 							<div class="input-group-addon">.00</div>
 						</div>
 					</div>
@@ -61,7 +61,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td>Total:{{totalValue | currency:" ¥"}}</td>
+					<td>Total:&nbsp&nbsp{{totalValue | currency:" ¥"}}</td>
 				</tr>
 				
 			</table>

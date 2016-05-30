@@ -3,68 +3,55 @@
 		[   
 			{
 			"date":"2016-05-09",
-			"num":"+67",
-			"type":"increase"
+			"num":"+67"
 			},
 			{
 			"date":"2016-05-10",
-			"num":"+37",
-			"type":"increase"
+			"num":"+37"
 			},
 			{
 			"date":"2016-05-11",
-			"num":"+47.5",
-			"type":"increase"
+			"num":"+47.5"
 			},
 			{
 			"date":"2016-05-12",
-			"num":"-86",
-			"type":"decrease"
+			"num":"-86"
 			},
 			{
 			"date":"2016-05-13",
-			"num":"+49",
-			"type":"increase"
+			"num":"+49"
 			},
 			{
 			"date":"2016-05-14",
-			"num":"-130",
-			"type":"decrease"
+			"num":"-130"
 			},
 			{
 			"date":"2016-05-15",
-			"num":"+34",
-			"type":"increase"
+			"num":"+34"
 			},
 			{
 			"date":"2016-05-16",
-			"num":"+13",
-			"type":"increase"
+			"num":"+13"
 			},
 			{
 			"date":"2016-05-17",
-			"num":"+43",
-			"type":"increase"
+			"num":"+43"
 			},
 			{
 			"date":"2016-05-18",
-			"num":"-74.5",
-			"type":"decrease"
+			"num":"-74.5"
 			},
 			{
 			"date":"2016-05-19",
-			"num":"-1.5",
-			"type":"decrease"
+			"num":"-1.5"
 			},
 			{
 			"date":"2016-05-20",
-			"num":"+18",
-			"type":"increase"
+			"num":"+18"
 			},
 			{
 			"date":"2016-05-21",
-			"num":"0",
-			"type":"increase"
+			"num":"0"
 			}
 		]
 }
